@@ -152,6 +152,99 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-1.Oracle学习笔记-SQLplus常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/15/1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">1.Oracle学习笔记-SQLplus常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2019-12-14T17:17:41.314Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Oracle学习笔记—SQLplus常用命令"><a href="#Oracle学习笔记—SQLplus常用命令" class="headerlink" title="Oracle学习笔记—SQLplus常用命令"></a>Oracle学习笔记—SQLplus常用命令</h1><ul>
+<li><p>解锁用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> scott acount <span class="keyword">unlock</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>登录命令: 常用于切换当前用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn[ect] 用户名/密码@网络 [as sysdba/as sysoper]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>断开和Oracle的链接，不退出窗口：<code>disc[onnect]</code></p>
+</li>
+<li><p>断开和Oracle的链接，同时退出窗口：<code>exit</code></p>
+</li>
+<li><p>显示当前用户：<code>show user</code></p>
+</li>
+<li><p>修改密码</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password 用户名(给自己改密码不带用户名)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示和设置环境变量，用来控制输出格式</p>
+<p>1.<code>linesize</code> 设置显示行的宽度，默认80个字符</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> linesize <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+
+<p>2.<code>pagesize</code> 设置每页显示的行数目，默认14行</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> pagesize <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建用户 （需要管理员权限才能创建）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">creat user 用户名 identified by 密码；（密码不能用数字开头）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改密码  （需要管理员权限才能修改）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 密码；</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/15/1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
