@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>2.Oracle学习笔记-用户管理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Oracle学习笔记—SQLplus常用命令 解锁用户 1alter user scott acount unlock;  登录命令: 常用于切换当前用户 1conn[ect] 用户名&#x2F;密码@网络 [as sysdba&#x2F;as sysoper]  断开和Oracle的链接，不退出窗口：disc[onnect]  断开和Oracle的链接，同时退出窗口：exit  显示当前用户：show user">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;Oracle&#x2F;1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html">
+  <meta name="description" content="用户管理用户管理 表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。  创建用户细节 1234create user 用户名 identified by 密码default tablespace user &#x2F;&#x2F;用户表空间在user上temporary tablespace temp &#x2F;&#x2F;临时表在temp上quota 3m on users；&#x2F;&#x2F;创建的数据对象最大3M;  Oracle新创建">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.Oracle学习笔记-用户管理">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Oracle学习笔记—SQLplus常用命令 解锁用户 1alter user scott acount unlock;  登录命令: 常用于切换当前用户 1conn[ect] 用户名&#x2F;密码@网络 [as sysdba&#x2F;as sysoper]  断开和Oracle的链接，不退出窗口：disc[onnect]  断开和Oracle的链接，同时退出窗口：exit  显示当前用户：show user">
+<meta property="og:description" content="用户管理用户管理 表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。  创建用户细节 1234create user 用户名 identified by 密码default tablespace user &#x2F;&#x2F;用户表空间在user上temporary tablespace temp &#x2F;&#x2F;临时表在temp上quota 3m on users；&#x2F;&#x2F;创建的数据对象最大3M;  Oracle新创建">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-08T14:35:49.192Z">
-<meta property="article:modified_time" content="2019-11-25T11:21:35.000Z">
+<meta property="article:published_time" content="2019-12-14T17:16:08.651Z">
+<meta property="article:modified_time" content="2019-12-15T01:43:40.564Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,42 +154,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-2.Oracle学习笔记-用户管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2.Oracle学习笔记-用户管理
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2019-12-14T17:16:08.651Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Oracle学习笔记—SQLplus常用命令"><a href="#Oracle学习笔记—SQLplus常用命令" class="headerlink" title="Oracle学习笔记—SQLplus常用命令"></a>Oracle学习笔记—SQLplus常用命令</h1><ul>
-<li><p>解锁用户</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> scott acount <span class="keyword">unlock</span>;</span><br></pre></td></tr></table></figure>
+        <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="用户管理-1"><a href="#用户管理-1" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
+<li><p>表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。</p>
 </li>
-<li><p>登录命令: 常用于切换当前用户</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn[ect] 用户名/密码@网络 [as sysdba/as sysoper]</span><br></pre></td></tr></table></figure>
+<li><p>创建用户细节</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 密码</span><br><span class="line"><span class="keyword">default</span> <span class="keyword">tablespace</span> <span class="keyword">user</span> //用户表空间在<span class="keyword">user</span>上</span><br><span class="line"><span class="keyword">temporary</span> <span class="keyword">tablespace</span> temp //临时表在temp上</span><br><span class="line"><span class="keyword">quota</span> <span class="number">3</span>m <span class="keyword">on</span> <span class="keyword">users</span>；//创建的数据对象最大<span class="number">3</span>M;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>断开和Oracle的链接，不退出窗口：<code>disc[onnect]</code></p>
-</li>
-<li><p>断开和Oracle的链接，同时退出窗口：<code>exit</code></p>
-</li>
-<li><p>显示当前用户：<code>show user</code></p>
-</li>
-<li><p>修改密码</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">password 用户名(给自己改密码不带用户名)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>显示和设置环境变量，用来控制输出格式</p>
-<p>1.<code>linesize</code> 设置显示行的宽度，默认80个字符</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> linesize <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<li><p>Oracle新创建的用户没有权限，需要管理员给用户分配权限</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">conn</span> <span class="keyword">to</span> 用户名； //登录权限</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">resource</span> <span class="keyword">to</span> 用户名； //取消空间限制</span><br><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> 用户名;  //赋予管理员权限</span><br><span class="line"><span class="keyword">revoke</span> 回收权限,用法同上.</span><br></pre></td></tr></table></figure>
 
-<p>2.<code>pagesize</code> 设置每页显示的行数目，默认14行</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> pagesize <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建用户 （需要管理员权限才能创建）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">creat user 用户名 identified by 密码；（密码不能用数字开头）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改密码  （需要管理员权限才能修改）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 密码；</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
+<ul>
+<li><p>删除用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> 用户名 [<span class="keyword">cascade</span>]  </span><br><span class="line">//删除用户时,如果用户创建过数据对象,加上<span class="keyword">cascade</span>,删除用户时一并删除数据对象.</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">account</span> <span class="keyword">lock</span>;//如果不想删除数据对象,则冻结该用户即可.</span><br></pre></td></tr></table></figure>
+
+<p>##方案</p>
+<p>当一个用户创建好后,如果该用户创建了一个数据对象,这时,dbms就会创建一个对应的方案与该用户对应,该方案与用户名一致.</p>
+</li>
+<li><p>方案的实际应用:(让xiaohong查询Scott的emp表)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conn scott/tiger;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>[<span class="keyword">update</span>|<span class="keyword">delete</span>|<span class="keyword">insert</span>] <span class="keyword">on</span> emp <span class="keyword">to</span> xiaohong;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> scott.emp;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="权限转移"><a href="#权限转移" class="headerlink" title="权限转移"></a>权限转移</h2>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> scott.emp <span class="keyword">to</span> tea <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;  //表示得到权限的用户,可以把权限继续分配</span><br><span class="line"><span class="keyword">with</span> <span class="keyword">admin</span> <span class="keyword">option</span> //转移系统权限</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用profile管理用户口令"><a href="#使用profile管理用户口令" class="headerlink" title="使用profile管理用户口令"></a>使用profile管理用户口令</h2><p>  <strong>概述</strong>:profile是口令限制,资源限制的命令集合,当建立用户时,会自动建立名为default的profile.</p>
+<p>  1.账户锁定:登录时最多可以输入密码的次数,也可以指定用户锁定的时间,用dba的身份执行.</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> profile lock_account <span class="keyword">limit</span> <span class="keyword">failed_login_attempts</span> <span class="number">3</span> <span class="keyword">password_lock_time</span> <span class="number">2</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea profile lock_account;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea <span class="keyword">account</span> <span class="keyword">unlock</span>; //给用户解锁</span><br></pre></td></tr></table></figure>
+
+<p>  2.终止口令:让用户定期修改密码,用dba的身份执行.</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> profile myprofile <span class="keyword">limit</span> password_life_time <span class="number">10</span> <span class="keyword">password_grace_time</span> <span class="number">2</span> <span class="keyword">password_reuse_time</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea profile myprofile;</span><br></pre></td></tr></table></figure>
+
+<p>  3.删除profile文件</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> profile 文件名;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Oracle数据库启动流程"><a href="#Oracle数据库启动流程" class="headerlink" title="Oracle数据库启动流程"></a>Oracle数据库启动流程</h2><ul>
+<li><p>启动流程</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isnrctl <span class="keyword">start</span>  //启动监听</span><br><span class="line">oradim -<span class="keyword">startup</span> -<span class="keyword">sid</span> 数据库实例名</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="Oracle登录认证方式"><a href="#Oracle登录认证方式" class="headerlink" title="Oracle登录认证方式"></a>Oracle登录认证方式</h2><ul>
+<li><p>操作系统认证:如果当前用户<strong>属于本地操作系统的ora_dba组</strong>,则可通过操作系统认证(<code>as sysdba</code>);</p>
+</li>
+<li><p>Oracle数据库认证(密码文件认证)</p>
+<p>对于<u>普通用户</u>,Oracle默认使用数据库认证</p>
+<p>对于<u>特权用户</u>,在ora_dba组中,Oracle默认使用操作系统认证,只要有<code>as sysdba</code>则不看密码,登录后自动切换到sys ; 如果验证不通过,再使用数据库认证.</p>
+</li>
+<li><p>通过配置sqlnet.ora文件可以修改登录认证方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NTS)  &#x2F;&#x2F;基于操作系统认证</span><br><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NONE)  &#x2F;&#x2F;基于Oracle认证</span><br><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NONE,NTS)  &#x2F;&#x2F;二者共存</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="丢失管理员密码"><a href="#丢失管理员密码" class="headerlink" title="丢失管理员密码"></a>丢失管理员密码</h2><p>  恢复步骤:</p>
+  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">搜索名为 PWD数据库实例名.ora 文件;</span><br><span class="line">删除该文件,备份以防万一;</span><br><span class="line">生成新的密码文件,在dos控制台输入以下命令:</span><br><span class="line">orapwd file = 原来的密码文件的全路径\密码文件名.ora password=新密码 entries=10;  //entries:允许几个特权用户</span><br></pre></td></tr></table></figure>
+
+<p>  <strong>注意:密码文件名一定要和原来的密码文件名一样.</strong></p>
 
       
 
@@ -269,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/Oracle/1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/15/2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +333,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/12/15/3.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%A1%A8%E7%9A%84%E7%AE%A1%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          3.Oracle学习笔记-表的管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/15/1.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-SQLplus%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1.Oracle学习笔记-SQLplus常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -331,7 +402,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

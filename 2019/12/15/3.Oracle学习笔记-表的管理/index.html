@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>3.Oracle学习笔记-表的管理 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Oracle学习笔记—用户管理用户管理 表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。  创建用户细节 1234create user 用户名 identified by 密码default tablespace user &#x2F;&#x2F;用户表空间在user上temporary tablespace temp &#x2F;&#x2F;临时表在temp上quota 3m on users；&#x2F;&#x2F;创建的数据对象最大3M;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;Oracle&#x2F;2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.html">
+  <meta name="description" content="表的管理创建表123456create table table_name(     filed1 datatype    filed2 datatype    filed3 datatype)    &#x2F;&#x2F;filed:指定列名  datatype:列类型  常用数据类型####文本&#x2F;二进制类型  char(size)  定长(数据不够空格来补)  最大2000个字符 vchar2(size) 变长">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.Oracle学习笔记-表的管理">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;15&#x2F;3.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%A1%A8%E7%9A%84%E7%AE%A1%E7%90%86&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Oracle学习笔记—用户管理用户管理 表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。  创建用户细节 1234create user 用户名 identified by 密码default tablespace user &#x2F;&#x2F;用户表空间在user上temporary tablespace temp &#x2F;&#x2F;临时表在temp上quota 3m on users；&#x2F;&#x2F;创建的数据对象最大3M;">
+<meta property="og:description" content="表的管理创建表123456create table table_name(     filed1 datatype    filed2 datatype    filed3 datatype)    &#x2F;&#x2F;filed:指定列名  datatype:列类型  常用数据类型####文本&#x2F;二进制类型  char(size)  定长(数据不够空格来补)  最大2000个字符 vchar2(size) 变长">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-08T14:08:54.503Z">
-<meta property="article:modified_time" content="2019-11-26T00:57:44.000Z">
+<meta property="og:image" content="c:%5CUsers%5CTSS-Wsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191125224751301.png">
+<meta property="og:image" content="c:%5CUsers%5CTSS-Wsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191125233912025.png">
+<meta property="article:published_time" content="2019-12-14T17:16:08.659Z">
+<meta property="article:modified_time" content="2019-12-15T01:42:51.518Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CTSS-Wsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191125224751301.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,79 +157,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-3.Oracle学习笔记-表的管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      3.Oracle学习笔记-表的管理
+    </h1>
+  
+
+        
+        <a href="/2019/12/15/3.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%A1%A8%E7%9A%84%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2019-12-14T17:16:08.659Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Oracle学习笔记—用户管理"><a href="#Oracle学习笔记—用户管理" class="headerlink" title="Oracle学习笔记—用户管理"></a>Oracle学习笔记—用户管理</h1><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ul>
-<li><p>表空间 ：表存在的空间，一个表空间指向一个具体的数据文件。</p>
-</li>
-<li><p>创建用户细节</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 密码</span><br><span class="line"><span class="keyword">default</span> <span class="keyword">tablespace</span> <span class="keyword">user</span> //用户表空间在<span class="keyword">user</span>上</span><br><span class="line"><span class="keyword">temporary</span> <span class="keyword">tablespace</span> temp //临时表在temp上</span><br><span class="line"><span class="keyword">quota</span> <span class="number">3</span>m <span class="keyword">on</span> <span class="keyword">users</span>；//创建的数据对象最大<span class="number">3</span>M;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Oracle新创建的用户没有权限，需要管理员给用户分配权限</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">conn</span> <span class="keyword">to</span> 用户名； //登录权限</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">resource</span> <span class="keyword">to</span> 用户名； //取消空间限制</span><br><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> 用户名;  //赋予管理员权限</span><br><span class="line"><span class="keyword">revoke</span> 回收权限,用法同上.</span><br></pre></td></tr></table></figure>
+        <h1 id="表的管理"><a href="#表的管理" class="headerlink" title="表的管理"></a>表的管理</h1><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> table_name</span><br><span class="line">( </span><br><span class="line">    filed1 datatype</span><br><span class="line">    filed2 datatype</span><br><span class="line">    filed3 datatype</span><br><span class="line">)    //filed:指定列名  datatype:列类型</span><br></pre></td></tr></table></figure>
 
-
-</li>
-</ul>
+<h3 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h3><p>####文本/二进制类型</p>
 <ul>
-<li><p>删除用户</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">user</span> 用户名 [<span class="keyword">cascade</span>]  </span><br><span class="line">//删除用户时,如果用户创建过数据对象,加上<span class="keyword">cascade</span>,删除用户时一并删除数据对象.</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">account</span> <span class="keyword">lock</span>;//如果不想删除数据对象,则冻结该用户即可.</span><br></pre></td></tr></table></figure>
-
-<p>##方案</p>
-<p>当一个用户创建好后,如果该用户创建了一个数据对象,这时,dbms就会创建一个对应的方案与该用户对应,该方案与用户名一致.</p>
-</li>
-<li><p>方案的实际应用:(让xiaohong查询Scott的emp表)</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conn scott/tiger;</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">select</span>[<span class="keyword">update</span>|<span class="keyword">delete</span>|<span class="keyword">insert</span>] <span class="keyword">on</span> emp <span class="keyword">to</span> xiaohong;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> scott.emp;</span><br></pre></td></tr></table></figure>
-
-
-
+<li><code>char(size)</code>  <strong>定长</strong>(数据不够空格来补)  最大<em>2000</em>个字符</li>
+<li><code>vchar2(size)</code> <strong>变长</strong> 最大<em>4000</em>个字符</li>
+<li><code>nchar(n)</code>   <u>Unicode数据类型</u> <strong>定长</strong>  最大<em>2000</em>个字符</li>
+<li><code>nvchar2(n)</code> <u>Unicode数据类型</u> <strong>变长</strong> 最大<em>4000</em>个字符</li>
+<li><code>clob(charcter large object)</code>  字符型大对象 最大8Tb</li>
+<li><code>blob(binary large object)</code>  二进制数据 可存放图片/声音 8Tb</li>
+</ul>
+<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><ul>
+<li><p><code>number(p,s)</code>   p为有效数位,s为小数位  </p>
+<ul>
+<li>1&lt;=p&lt;=38, -84&lt;=s&lt;=127   //0.00000000001</li>
+<li>可存放整数,也可存放小数</li>
+<li>S为正代表小数点右边,S为负代表小数点左边</li>
+</ul>
+<p><img src="C:%5CUsers%5CTSS-Wsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191125224751301.png" alt="image-20191125224751301"></p>
 </li>
 </ul>
-<h2 id="权限转移"><a href="#权限转移" class="headerlink" title="权限转移"></a>权限转移</h2>  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> scott.emp <span class="keyword">to</span> tea <span class="keyword">with</span> <span class="keyword">grant</span> <span class="keyword">option</span>;  //表示得到权限的用户,可以把权限继续分配</span><br><span class="line"><span class="keyword">with</span> <span class="keyword">admin</span> <span class="keyword">option</span> //转移系统权限</span><br></pre></td></tr></table></figure>
+<h4 id="时间日期"><a href="#时间日期" class="headerlink" title="时间日期"></a>时间日期</h4><ul>
+<li><code>date</code>  默认格式 DD-MON-YYYY</li>
+<li>timestamp(n)</li>
+</ul>
+<p><strong>注意:</strong></p>
+<p>1.如果数据长度固定,则应当使用<code>char</code>数据来存放,存取速度快;</p>
+<p>2.一个汉字,占用<code>nchar</code>的一个字符空间,占用<code>char</code>的两个字符空间;</p>
+<p>3.开发中很少吧文件存放到数据库,一般记录文件路径.</p>
+<h2 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h2><p>使用<code>ALTER TABLE</code>语句添加,修改,或者删除列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">add</span> (列名 数据类型); //增加</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table table_name modify (列名 数据类型); &#x2F;&#x2F;修改</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> table_name <span class="keyword">drop</span> <span class="keyword">column</span> (列名); //删除</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> 表名 <span class="keyword">to</span> 新表名; //修改表名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> 表名; //删除表</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc 表名; //查看表结构</span><br></pre></td></tr></table></figure>
+
+<h2 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h2><h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> table_name(列名) <span class="keyword">values</span> (要添加的数据);</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong></p>
+<p>1.插入的数据要和字段数据类型一致;</p>
+<p>2.数据的大小应在列的规定范围内;</p>
+<p>3.在value中列出的数据位置必须与被加入的列排列位置相同(多               个数据时);</p>
+<p>4.字符和日期类型数据应包含在单引号中;</p>
+<p>5.要插入空值,不指定或<code>insert into table value (null)</code>;</p>
+<p>6.如果给每列都添加值,则可以不带列名.</p>
+<h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> table_name <span class="keyword">set</span> 列名=表达式 [<span class="keyword">where</span> 条件];</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong></p>
+<p>1.<code>update</code>语句可以用新值更新原有表中的各列;</p>
+<p>2.<code>set</code>子句指示要更新哪些列和要给予哪些值;</p>
+<p>3.<code>where</code>子句指定更新哪些行,如果不指定,则更新所有列.</p>
+<p>4.为空判断 <code>update stu set f=10 where f is null;</code></p>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name <span class="keyword">where</span> 条件</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong></p>
+<p>1.如果不带where条件,则删除所有数据;</p>
+<p>2.delete语句不能删除某列的值,如果要删除,则将数据置空;</p>
+<p>3.使用delete语句,仅删除记录,不删除表本身,要删除表,用drop语句;</p>
+<p>4.从一张表删除记录,将引起其他表的<strong>参照完整性</strong>问题.</p>
+<p><img src="C:%5CUsers%5CTSS-Wsh%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20191125233912025.png" alt="image-20191125233912025"></p>
+<h4 id="几种删除方法的比较"><a href="#几种删除方法的比较" class="headerlink" title="几种删除方法的比较"></a>几种删除方法的比较</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> table_name; //删除所有记录,表结构还在,写日志,可以恢复,速度慢</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> table_name; //删除表结构和数据</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> 表名; //删除表中的所有记录,表结构还在,不写日志,无法找回删除的记录,速度快</span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="使用profile管理用户口令"><a href="#使用profile管理用户口令" class="headerlink" title="使用profile管理用户口令"></a>使用profile管理用户口令</h2><p>  <strong>概述</strong>:profile是口令限制,资源限制的命令集合,当建立用户时,会自动建立名为default的profile.</p>
-<p>  1.账户锁定:登录时最多可以输入密码的次数,也可以指定用户锁定的时间,用dba的身份执行.</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> profile lock_account <span class="keyword">limit</span> <span class="keyword">failed_login_attempts</span> <span class="number">3</span> <span class="keyword">password_lock_time</span> <span class="number">2</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea profile lock_account;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea <span class="keyword">account</span> <span class="keyword">unlock</span>; //给用户解锁</span><br></pre></td></tr></table></figure>
+<h3 id="查找数据"><a href="#查找数据" class="headerlink" title="查找数据"></a>查找数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [<span class="keyword">distinct</span>] * |&#123;列名<span class="number">1</span>,列名<span class="number">2.</span>..&#125; <span class="keyword">from</span> 表名 [<span class="keyword">where</span> &#123;条件&#125;]  //<span class="keyword">distinct</span>过滤重复数据</span><br></pre></td></tr></table></figure>
 
-<p>  2.终止口令:让用户定期修改密码,用dba的身份执行.</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> profile myprofile <span class="keyword">limit</span> password_life_time <span class="number">10</span> <span class="keyword">password_grace_time</span> <span class="number">2</span> <span class="keyword">password_reuse_time</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> tea profile myprofile;</span><br></pre></td></tr></table></figure>
-
-<p>  3.删除profile文件</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> profile 文件名;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Oracle数据库启动流程"><a href="#Oracle数据库启动流程" class="headerlink" title="Oracle数据库启动流程"></a>Oracle数据库启动流程</h2><ul>
-<li><p>启动流程</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isnrctl <span class="keyword">start</span>  //启动监听</span><br><span class="line">oradim -<span class="keyword">startup</span> -<span class="keyword">sid</span> 数据库实例名</span><br></pre></td></tr></table></figure>
-
-
-
+<p><strong>注意:</strong></p>
+<ul>
+<li><p>Oracle语句不区分大小写,数据内容区分大小写.</p>
+</li>
+<li><p><code>nvl()</code>函数用来处理数据为null的问题</p>
+<p><code>nvl(comm,0)</code>:如果comm为null,则返回0;如果不为空,则反回本身的值.</p>
+</li>
+<li><p><strong>||的使用</strong>:在查询时把多列拼接起来作为一列返回</p>
 </li>
 </ul>
-<h2 id="Oracle登录认证方式"><a href="#Oracle登录认证方式" class="headerlink" title="Oracle登录认证方式"></a>Oracle登录认证方式</h2><ul>
-<li><p>操作系统认证:如果当前用户<strong>属于本地操作系统的ora_dba组</strong>,则可通过操作系统认证(<code>as sysdba</code>);</p>
-</li>
-<li><p>Oracle数据库认证(密码文件认证)</p>
-<p>对于<u>普通用户</u>,Oracle默认使用数据库认证</p>
-<p>对于<u>特权用户</u>,在ora_dba组中,Oracle默认使用操作系统认证,只要有<code>as sysdba</code>则不看密码,登录后自动切换到sys ; 如果验证不通过,再使用数据库认证.</p>
-</li>
-<li><p>通过配置sqlnet.ora文件可以修改登录认证方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NTS)  &#x2F;&#x2F;基于操作系统认证</span><br><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NONE)  &#x2F;&#x2F;基于Oracle认证</span><br><span class="line">SQLNET.AUTHENTICATION_SERVICES &#x3D; (NONE,NTS)  &#x2F;&#x2F;二者共存</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h2 id="丢失管理员密码"><a href="#丢失管理员密码" class="headerlink" title="丢失管理员密码"></a>丢失管理员密码</h2><p>  恢复步骤:</p>
-  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">搜索名为 PWD数据库实例名.ora 文件;</span><br><span class="line">删除该文件,备份以防万一;</span><br><span class="line">生成新的密码文件,在dos控制台输入以下命令:</span><br><span class="line">orapwd file = 原来的密码文件的全路径\密码文件名.ora password=新密码 entries=10;  //entries:允许几个特权用户</span><br></pre></td></tr></table></figure>
-
-<p>  <strong>注意:密码文件名一定要和原来的密码文件名一样.</strong></p>
 
       
 
@@ -306,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/Oracle/2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/15/3.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%A1%A8%E7%9A%84%E7%AE%A1%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -318,6 +354,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2019/12/15/4.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          4.Oracle学习笔记-基本查询
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/15/2.Oracle%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2.Oracle学习笔记-用户管理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -368,7 +423,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
